@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="Cn.css" rel="stylesheet">
+ 
+</head>
+<body>
+  <div class="display">
+    <input type="text" id="display" readonly>
+  </div>
+<div class="container">
+  <input type="button"value="(" onclick="addToDisplay('(')" class="btn">
+  <input type="button"value=")"onclick="" class="btn">
+  <input type="button"value="%"onclick="addToDisplay('%')" class="btn">
+  <input type="button"value="AC"onclick="clearDisplay('AC')"class="btn">
+  <input type="button"value="7"onclick="addToDisplay('7')" class="btn">
+  <input type="button"value="8"onclick="addToDisplay('8')" class="btn">
+  <input type="button"value="9"onclick="addToDisplay('9')" class="btn">
+  <input type="button"value="/"onclick="addToDisplay('/')" class="btn">
+  <input type="button"value="4"onclick="addToDisplay('4')"class="btn">
+  <input type="button"value="5"onclick="addToDisplay('5')" class="btn">
+  <input type="button"value="6"onclick="addToDisplay('6')" class="btn">
+  <input type="button"value="*"onclick="addToDisplay('*')"class="btn">
+  <input type="button"value="1"onclick="addToDisplay('1')"class="btn">
+  <input type="button"value="2"onclick="addToDisplay('2')" class="btn">
+  <input type="button"value="3"onclick="addToDisplay('3')"class="btn">
+  <input type="button"value="-"onclick="addToDisplay('-')"class="btn">
+  <input type="button"value="0"onclick="addToDisplay('0')"class="btn">
+  <input type="button"value="."onclick="addToDisplay('.')"class="btn">
+  <input type="button"value="="onclick="calculate()"class="btn">
+  <input type="button"value="+"onclick="addToDisplay('+')" class="btn">
+</div>
+<script>
+      function addToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+    function calculate() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch (error) {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+
+</script>
+    
+</body>
+</html>
